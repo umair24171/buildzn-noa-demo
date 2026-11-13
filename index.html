@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Missed Lead Catcher — NOA Dental Clinic Dubai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f6f4; --surface:#ffffff; --surface2:#eef3f0; --ink:#10231c; --muted:#5b6f66; --line:#dce6e0;
+  --brand:#0c6b4f; --brand2:#0a4f3a; --teal:#128c7e; --wa:#25d366; --wa-bg:#e7ddd0; --wa-chat:#ece5dd;
+  --bubble-in:#ffffff; --bubble-out:#d9fdd3; --amber:#b45309; --amber-bg:#fef3c7; --red:#b42318; --red-bg:#fee4e2;
+  --green-bg:#dcfce7; --shadow:0 20px 50px rgba(12,60,45,.14); --radius:18px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0d1512; --surface:#16211c; --surface2:#1c2b24; --ink:#e8f2ec; --muted:#9db4a8; --line:#263a31; --wa-bg:#0b141a; --wa-chat:#0b141a; --bubble-in:#1f2c34; --bubble-out:#005c4b; --shadow:0 20px 50px rgba(0,0,0,.5); }
+}
+*{box-sizing:border-box} body{margin:0;font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+button,input{font:inherit}
+button,[role="button"]{min-height:44px}
+a{color:var(--brand)}
+.wrap{max-width:1220px;margin:0 auto;padding:22px 18px 36px}
+.top{ display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:18px}
+.top h1{font-family:"Fraunces",serif;font-size:clamp(28px,4vw,44px);line-height:.95;margin:0;letter-spacing:-.02em;max-width:640px}
+.top h1 em{color:var(--brand);font-style:normal}
+.top p{color:var(--muted);max-width:560px;margin:10px 0 0;font-size:15.5px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;padding:8px 12px;border-radius:999px;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.badge i{width:8px;height:8px;background:#7dffc4;border-radius:50%;display:block;box-shadow:0 0 0 4px rgba(255,255,255,.18)}
+.stats{display:flex;gap:10px;flex-wrap:wrap}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 14px;min-width:118px}
+.stat b{display:block;font-size:20px;line-height:1} .stat span{font-size:12px;color:var(--muted);font-weight:600}
+.grid{display:grid;grid-template-columns:300px 1fr 340px;gap:18px;align-items:start}
+@media(max-width:1020px){.grid{grid-template-columns:1fr 1fr} .phone-col{order:-1;grid-column:1/-1;display:flex;justify-content:center}}
+@media(max-width:640px){.grid{grid-template-columns:1fr} .wrap{padding:16px 12px 28px}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.card h2{margin:0 0 6px;font-size:16px} .card h3{margin:18px 0 8px;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.card p.small{color:var(--muted);font-size:13.5px;margin:0}
+.scenario{width:100%;text-align:left;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:12px 13px;margin-top:9px;cursor:pointer;display:flex;gap:10px;align-items:flex-start}
+.scenario:hover{border-color:var(--brand)} .scenario b{font-size:14px;display:block} .scenario span{font-size:12.5px;color:var(--muted);display:block;line-height:1.4}
+.scenario .ico{font-size:18px;line-height:1;margin-top:2px}
+.steps{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:9px}
+.steps li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted)}
+.steps li .dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:12px;flex:0 0 22px;background:var(--surface)}
+.steps li.done{color:var(--ink);font-weight:600} .steps li.done .dot{background:var(--brand);border-color:var(--brand);color:#fff}
+.steps li.active .dot{border-color:var(--brand);color:var(--brand)}
+.note{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:12px;padding:11px 12px;font-size:13px;margin-top:14px}
+@media(prefers-color-scheme:dark){.note{background:#2a2110;color:#fcd34d;border-color:#57451a}}
+/* PHONE */
+.phone{width:min(430px,100%);background:#111;border-radius:36px;padding:10px;box-shadow:var(--shadow);margin:0 auto}
+.screen{background:var(--wa-chat);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;height:680px;max-height:78vh}
+@media(max-width:640px){.screen{height:640px}}
+.wa-head{background:#075e54;color:#fff;padding:12px 14px;display:flex;align-items:center;gap:11px}
+@media(prefers-color-scheme:dark){.wa-head{background:#1f2c34}}
+.avatar{width:42px;height:42px;border-radius:50%;background:#fff;color:#0c6b4f;display:grid;place-items:center;font-weight:800;letter-spacing:-.02em;flex:0 0 42px}
+.wa-head b{font-size:15px;display:block;line-height:1.1} .wa-head span{font-size:12px;opacity:.85}
+.wa-head .icons{margin-left:auto;font-size:17px;letter-spacing:8px;opacity:.9}
+.system{text-align:center;margin:10px 12px 2px}
+.system span{background:#fdf3c6;color:#5c4b08;font-size:11.5px;padding:6px 9px;border-radius:8px;display:inline-block;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+@media(prefers-color-scheme:dark){.system span{background:#182229;color:#ffd279}}
+.chat{flex:1;overflow-y:auto;padding:12px 12px 8px;display:flex;flex-direction:column;gap:7px;background-image:radial-gradient(rgba(0,0,0,.06) 1px, transparent 1px);background-size:18px 18px}
+.msg{max-width:82%;padding:8px 10px 6px;border-radius:10px;font-size:14.5px;line-height:1.45;box-shadow:0 1px 1px rgba(0,0,0,.08);position:relative;white-space:pre-wrap;word-wrap:break-word}
+.msg.in{background:var(--bubble-in);align-self:flex-start;border-top-left-radius:2px}
+.msg.out{background:var(--bubble-out);align-self:flex-end;border-top-right-radius:2px}
+.msg .time{font-size:11px;color:#667781;text-align:right;margin-top:3px}
+.msg.out .time::after{content:" ✓✓";color:#53bdeb}
+.msg.handoff{background:#fff7ed;border:1px dashed #f59e0b;align-self:center;max-width:92%;text-align:center;font-size:13px}
+@media(prefers-color-scheme:dark){.msg.handoff{background:#2a1f0a}}
+.msg.booked{background:#dcfce7;border:1px solid #22c55e;align-self:center;max-width:92%;text-align:center}
+.typing{align-self:flex-start;background:var(--bubble-in);border-radius:10px;padding:10px 12px;display:none;gap:4px}
+.typing.show{display:flex} .typing i{width:7px;height:7px;background:#94a3b8;border-radius:50%;animation:b 1s infinite} .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes b{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-3px);opacity:1}}
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding:8px 10px;background:transparent}
+.chips button{background:#fff;border:1px solid var(--teal);color:#075e54;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700;cursor:pointer;min-height:38px}
+@media(prefers-color-scheme:dark){.chips button{background:#1f2c34;color:#7ee8c7;border-color:#2a6b5e}}
+.composer{display:flex;gap:8px;padding:10px;background:transparent;align-items:center}
+.composer input{flex:1;border:0;border-radius:999px;padding:12px 14px;background:#fff;color:#111;min-height:46px;outline:none}
+@media(prefers-color-scheme:dark){.composer input{background:#2a3942;color:#fff}}
+.send{width:46px;height:46px;border-radius:50%;border:0;background:#00a884;color:#fff;font-size:18px;cursor:pointer;flex:0 0 46px}
+.phone-actions{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.phone-actions button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 14px;font-weight:700;cursor:pointer;font-size:13.5px}
+/* LEAD LOG */
+.log-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pill{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 8px;border-radius:999px;white-space:nowrap}
+.pill.new{background:#dbeafe;color:#1e40af}.pill.qual{background:#fef3c7;color:#92400e}.pill.offer{background:#e0e7ff;color:#3730a3}.pill.booked{background:var(--green-bg);color:#166534}.pill.human{background:var(--red-bg);color:var(--red)}
+.lead{border:1px solid var(--line);border-radius:14px;padding:13px;margin-top:11px;background:var(--surface)}
+.lead.live{border-color:var(--brand);box-shadow:0 0 0 3px rgba(12,107,79,.12)}
+.lead-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.lead b{font-size:14.5px} .lead .meta{font-size:12.5px;color:var(--muted)}
+.kv{display:grid;grid-template-columns:74px 1fr;gap:4px 8px;font-size:13px;margin-top:9px}
+.kv dt{color:var(--muted)} .kv dd{margin:0;font-weight:600}
+.kv dd.empty{color:var(--muted);font-weight:400;font-style:italic}
+.log-foot{font-size:12.5px;color:var(--muted);margin-top:12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div>
+      <div class="badge"><i></i> Live demo &nbsp;•&nbsp; WhatsApp</div>
+      <h1>The message came in at 9:47pm. <em>Nobody missed it.</em></h1>
+      <p>NOA Dental Clinic in Dubai is closed for the night, but a new patient just messaged on WhatsApp. Watch the missed-lead catcher reply, qualify them in three questions, offer the next two slots — and hand anything tricky to a human.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>&lt; 60s</b><span>First reply</span></div>
+      <div class="stat"><b>3</b><span>Questions asked</span></div>
+      <div class="stat"><b>2</b><span>Slots offered</span></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- LEFT -->
+    <aside class="card">
+      <h2>Try a scenario</h2>
+      <p class="small">Tap one to play it as the patient, or just type in the phone yourself. The agent is running — try asking about price or pain and see what happens.</p>
+
+      <button class="scenario" onclick="playScenario('booking')"><span class="ico">🦷</span><span><b>New patient booking</b><span>The happy path: whitening, tomorrow, booked in under a minute.</span></span></button>
+      <button class="scenario" onclick="playScenario('price')"><span class="ico">💬</span><span><b>“How much for an implant?”</b><span>A price question the agent should not guess at. Watch the handoff.</span></span></button>
+      <button class="scenario" onclick="playScenario('pain')"><span class="ico">⚠️</span><span><b>Tooth pain, swelling</b><span>Anything medical or urgent goes straight to a human.</span></span></button>
+      <button class="scenario" onclick="playScenario('evening')"><span class="ico">🌙</span><span><b>After-hours enquiry</b><span>Cleaning, evening only — the classic missed lead.</span></span></button>
+
+      <h3>What the agent does</h3>
+      <ol class="steps" id="steps">
+        <li data-step="reply"><span class="dot">1</span> Replies in under a minute, even after hours</li>
+        <li data-step="service"><span class="dot">2</span> Asks what service they need</li>
+        <li data-step="when"><span class="dot">3</span> Asks when suits them</li>
+        <li data-step="name"><span class="dot">4</span> Asks for their name</li>
+        <li data-step="slots"><span class="dot">5</span> Offers the next 2 available slots</li>
+        <li data-step="outcome"><span class="dot">6</span> Books it — or hands tricky questions to a human</li>
+      </ol>
+
+      <div class="note"><strong>Demo only:</strong> This is a simulator. No real WhatsApp is connected and no appointment is actually booked. Prices, diagnosis and insurance are never answered by the agent.</div>
+    </aside>
+
+    <!-- PHONE -->
+    <div class="phone-col">
+      <div>
+        <div class="phone">
+          <div class="screen">
+            <div class="wa-head">
+              <div class="avatar">NOA</div>
+              <div><b>NOA Dental Clinic</b><span id="presence">online • Business account</span></div>
+              <div class="icons">⌕ ⋮</div>
+            </div>
+            <div class="system"><span>🔒 Demo conversation — messages are simulated in your browser</span></div>
+            <div class="chat" id="chat"></div>
+            <div style="padding:0 12px"><div class="typing" id="typing"><i></i><i></i><i></i></div></div>
+            <div class="chips" id="chips"></div>
+            <form class="composer" id="composer">
+              <input id="input" autocomplete="off" placeholder="Message as the patient…" aria-label="Message as the patient">
+              <button class="send" type="submit" aria-label="Send message">➤</button>
+            </form>
+          </div>
+        </div>
+        <div class="phone-actions">
+          <button onclick="resetDemo()">↺ Reset conversation</button>
+          <button onclick="document.getElementById('input').focus()">✎ Type your own message</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEAD LOG -->
+    <aside class="card" aria-live="polite">
+      <div class="log-head"><h2>Lead log</h2><span class="pill new" id="logCount">1 live lead</span></div>
+      <p class="small">Every conversation lands here for the front desk, whether it booked or was handed over. The live lead fills in as you chat.</p>
+
+      <div id="leads">
+        <div class="lead live" id="liveLead">
+          <div class="lead-top"><div><b id="ll-name">New WhatsApp lead</b><div class="meta" id="ll-time">Just now • WhatsApp • After hours</div></div><span class="pill new" id="ll-status">New</span></div>
+          <dl class="kv">
+            <dt>Service</dt><dd class="empty" id="ll-service">Not asked yet</dd>
+            <dt>Wants</dt><dd class="empty" id="ll-when">—</dd>
+            <dt>Slot</dt><dd class="empty" id="ll-slot">—</dd>
+            <dt>Source</dt><dd>WhatsApp — clinic number</dd>
+          </dl>
+        </div>
+
+        <div class="lead">
+          <div class="lead-top"><div><b>Sara Al Mansoori</b><div class="meta">Today, 6:12pm • WhatsApp</div></div><span class="pill booked">Booked</span></div>
+          <dl class="kv"><dt>Service</dt><dd>Cleaning &amp; polishing</dd><dt>Wants</dt><dd>Weekday evening</dd><dt>Slot</dt><dd>Mon, Nov 16 • 6:30 PM</dd><dt>Source</dt><dd>Google profile</dd></dl>
+        </div>
+        <div class="lead">
+          <div class="lead-top"><div><b>James Whitfield</b><div class="meta">Today, 1:04pm • WhatsApp</div></div><span class="pill human">Human handoff</span></div>
+          <dl class="kv"><dt>Service</dt><dd>Implant — asked about insurance cover</dd><dt>Wants</dt><dd>—</dd><dt>Slot</dt><dd>—</dd><dt>Source</dt><dd>Instagram</dd></dl>
+          <p class="meta" style="margin:8px 0 0">↪ Passed to front desk with full transcript. No price or cover promised by the agent.</p>
+        </div>
+      </div>
+
+      <div class="legend"><span class="pill new">New</span><span class="pill qual">Qualifying</span><span class="pill offer">Slot offered</span><span class="pill booked">Booked</span><span class="pill human">Human handoff</span></div>
+      <p class="log-foot">In the real setup this log is a Google Sheet / CRM row plus an instant alert to the front desk on every handoff. Pilot test price discussed for this bet: $200 setup.</p>
+    </aside>
+  </div>
+  <p class="footer">NOA Dental Clinic, Dubai — demo built to show the missed-lead catcher flow: reply fast, ask service / when / name, offer 2 slots, escalate the rest.</p>
+</div>
+
+<script>
+var chat=document.getElementById('chat'), chipsEl=document.getElementById('chips'), input=document.getElementById('input'), typing=document.getElementById('typing');
+var SERVICES=[
+ {k:['whiten','bright'],label:'Teeth whitening'},
+ {k:['clean','polish','scaling'],label:'Cleaning & polishing'},
+ {k:['brace','invisalign','aligner','orthodont'],label:'Braces / Invisalign'},
+ {k:['implant'],label:'Dental implant'},
+ {k:['root canal'],label:'Root canal'},
+ {k:['check','checkup','check-up','exam','general'],label:'General checkup'},
+ {k:['fill'],label:'Filling'},
+ {k:['crown','veneer'],label:'Crown / veneers'}
+];
+var TRICKY=['price','cost','how much','charge','fee','discount','offer','cheap','insurance','cover','covered','pain','hurt','ache','swollen','swelling','bleed','emergency','broken tooth','chipped','guarantee','will it work','diagnos','infection','pus','fever','complaint','refund','unhappy','lawyer'];
+var state, slots;
+var demoClock=21*60+47; function fmtTime(d){ demoClock+=1; var h=Math.floor(demoClock/60)%12; if(h===0)h=12; var m=('0'+(demoClock%60)).slice(-2); return h+':'+m+' PM'; }
+function nextSlots(){
+  var out=[], d=new Date(); d.setDate(d.getDate()+1);
+  // skip Friday? Dubai clinics vary — keep simple: tomorrow + next day
+  var times=[[11,0],[15,30]];
+  for(var i=0;i<2;i++){ var dt=new Date(d); dt.setDate(d.getDate()+i); dt.setHours(times[i][0],times[i][1],0,0);
+    out.push(dt.toLocaleDateString([], {weekday:'short',day:'numeric',month:'short'})+' • '+dt.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}));}
+  return out;
+}
+function setStep(key,done){
+  document.querySelectorAll('#steps li').forEach(function(li){ if(li.dataset.step===key){ li.classList.add(done?'done':'active'); if(done) li.classList.remove('active'); li.querySelector('.dot').textContent=done?'✓':li.querySelector('.dot').textContent; }});
+}
+function setLead(field,val){ var el=document.getElementById(field); if(el){el.textContent=val; el.classList.remove('empty');} }
+function setStatus(txt,cls){ var el=document.getElementById('ll-status'); el.textContent=txt; el.className='pill '+cls; }
+function scrollChat(){ chat.scrollTop=chat.scrollHeight; }
+function addMsg(text,who,extra){
+  var div=document.createElement('div'); div.className='msg '+(who==='cust'?'out':'in')+(extra?' '+extra:'');
+  div.innerHTML=''; div.appendChild(document.createTextNode(text));
+  var t=document.createElement('div'); t.className='time'; t.textContent=fmtTime(new Date()); div.appendChild(t);
+  chat.appendChild(div); scrollChat(); return div;
+}
+function addSystem(text,cls){ var div=document.createElement('div'); div.className='msg '+(cls||'handoff'); div.textContent=text; chat.appendChild(div); scrollChat(); }
+function showChips(list){
+  chipsEl.innerHTML='';
+  list.forEach(function(c){ var b=document.createElement('button'); b.type='button'; b.textContent=c.label; b.onclick=function(){ handleCustomer(c.value); }; chipsEl.appendChild(b); });
+}
+function agentSay(text,delay,cb){
+  typing.classList.add('show'); scrollChat();
+  setTimeout(function(){ typing.classList.remove('show'); addMsg(text,'agent'); if(cb)cb(); }, delay||950);
+}
+function detectService(text){ var t=text.toLowerCase(); for(var i=0;i<SERVICES.length;i++){ for(var j=0;j<SERVICES[i].k.length;j++){ if(t.indexOf(SERVICES[i].k[j])>-1) return SERVICES[i].label; } } return null; }
+function detectTricky(text){ var t=text.toLowerCase(); for(var i=0;i<TRICKY.length;i++){ if(t.indexOf(TRICKY[i])>-1) return TRICKY[i]; } return null; }
+function detectName(text){
+  var m=text.match(/(?:my name is|i am|i'm|this is)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)/i);
+  if(m) return m[1].replace(/\b\w/g,function(c){return c.toUpperCase();});
+  if(state.stage==='name' && text.trim().split(/\s+/).length<=3 && !detectService(text)) return text.trim().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  return null;
+}
+function handoff(reason){
+  state.stage='handoff'; setStatus('Human handoff','human'); setStep('outcome',true);
+  agentSay("That's one for our front desk team rather than me — I don't want to give you a wrong answer on "+reason+".",900,function(){
+    agentSay("I've passed your message and this chat to our team at NOA Dental. Someone will reply here on WhatsApp shortly. If it's urgent, you can also call the clinic directly.",800,function(){
+      addSystem('↪ Handed to a human — front desk notified with the full transcript. Lead saved in the log on the right.','handoff');
+      showChips([{label:'Start a new enquiry',value:'__reset__'}]);
+    });
+  });
+}
+function offerSlots(){
+  state.stage='slots'; setStep('slots',true); setStatus('Slot offered','offer');
+  agentSay('Thanks, '+state.name.split(' ')[0]+'. Here are the next 2 slots I can hold for '+state.service+':\n\n1) '+slots[0]+'\n2) '+slots[1]+'\n\nTap one, or tell me if neither works.',1000,function(){
+    showChips([{label:'1) '+slots[0],value:'__slot0__'},{label:'2) '+slots[1],value:'__slot1__'},{label:'Neither works',value:'Neither of those works for me'}]);
+  });
+}
+function askNext(){
+  if(!state.service){ state.stage='service'; setStep('reply',true); setStep('service',false);
+    agentSay('Of course, I can help with that. What service are you looking for?',850,function(){
+      showChips(SERVICES.slice(0,5).map(function(s){return {label:s.label,value:'I need '+s.label};}).concat([{label:'General checkup',value:'I need a general checkup'}]));
+    }); return; }
+  if(!state.whenText){ state.stage='when'; setStep('service',true); setStep('when',false);
+    agentSay('Great — '+state.service+'. When would suit you best? For example, tomorrow, a weekday evening, or this weekend?',850,function(){
+      showChips([{label:'Tomorrow',value:'Tomorrow works'},{label:'Weekday evening',value:'A weekday evening'},{label:'This weekend',value:'This weekend'}]);
+    }); return; }
+  if(!state.name){ state.stage='name'; setStep('when',true); setStep('name',false);
+    agentSay('Perfect, noted. And what name should I book it under?',800,function(){ showChips([]); input.placeholder='Type your name…'; }); return; }
+  setStep('name',true); offerSlots();
+}
+function handleCustomer(text){
+  if(text==='__reset__'){ resetDemo(); return; }
+  if(text==='__slot0__'||text==='__slot1__'){
+    var idx=text==='__slot0__'?0:1; addMsg(slots[idx],'cust'); state.slot=slots[idx]; setLead('ll-slot',slots[idx]);
+    state.stage='booked'; setStatus('Booked','booked'); setStep('outcome',true); showChips([]);
+    setTimeout(function(){ agentSay('Done — you are provisionally booked for '+state.service+' on '+state.slot+', '+state.name+'.',900,function(){
+      agentSay('The clinic will confirm here on WhatsApp. Please bring your Emirates ID, and arrive 10 minutes early. Anything else I can help with?',750,function(){ addSystem('✓ Booked — confirmation sent to patient, lead marked Booked in the log.','booked'); showChips([{label:'Start a new enquiry',value:'__reset__'}]); });
+    }); },350); return;
+  }
+  addMsg(text,'cust'); showChips([]); input.placeholder='Message as the patient…';
+  // extract info from any message
+  var svc=detectService(text); if(svc && !state.service){ state.service=svc; setLead('ll-service',svc); }
+  var nm=detectName(text); if(nm && !state.name){ state.name=nm; setLead('ll-name',nm); document.getElementById('ll-time').textContent='Just now • WhatsApp • '+nm; }
+  if((/tomorrow|evening|morning|weekend|today|monday|tuesday|wednesday|thursday|friday|saturday|sunday|next week|after work/i.test(text)) && !state.whenText){ state.whenText=text; setLead('ll-when',text); }
+  if(state.stage!=='handoff' && state.stage!=='booked'){
+    var tricky=detectTricky(text);
+    // price/medical at any point = handoff, unless it was just the service word 'implant' alone in a booking flow with no question
+    if(tricky && !(/^(i need|i want|book|please)/i.test(text) && tricky==='implant')){ setTimeout(function(){handoff(tricky==='pain'||tricky==='hurt'||tricky==='ache'||tricky==='swelling'||tricky==='swollen'||tricky==='emergency'?'pain or anything urgent':tricky);},300); return; }
+  }
+  if(state.stage==='slots'){ agentSay("No problem — I've noted that those don't work. I've flagged it for the front desk to offer you other times, and saved your details so you don't have to repeat them.",900,function(){ setStatus('Human handoff','human'); addSystem('↪ Handed to a human to find alternative slots. Lead saved.','handoff'); showChips([{label:'Start a new enquiry',value:'__reset__'}]); }); return; }
+  if(state.statusNew){ state.statusNew=false; setStatus('Qualifying','qual'); }
+  setTimeout(askNext,250);
+}
+function playScenario(kind){
+  resetDemo(true);
+  setTimeout(function(){
+    if(kind==='booking') handleCustomer('Hi, do you have anything for teeth whitening?');
+    if(kind==='price') handleCustomer('Hi, how much does a dental implant cost?');
+    if(kind==='pain') handleCustomer('Hi, my tooth is hurting badly and my cheek is swollen');
+    if(kind==='evening') handleCustomer('Hi, I need a cleaning but I can only do evenings after work');
+  },350);
+}
+function resetDemo(silent){
+  demoClock=21*60+46;
+  state={stage:'start',service:null,whenText:null,name:null,slot:null,statusNew:true};
+  slots=nextSlots();
+  chat.innerHTML=''; chipsEl.innerHTML='';
+  document.querySelectorAll('#steps li').forEach(function(li,i){ li.classList.remove('done','active'); li.querySelector('.dot').textContent=i+1; });
+  ['ll-service','ll-when','ll-slot'].forEach(function(id){ var el=document.getElementById(id); el.textContent=id==='ll-service'?'Not asked yet':'—'; el.classList.add('empty'); });
+  document.getElementById('ll-name').textContent='New WhatsApp lead'; setStatus('New','new');
+  if(!silent){
+    agentSay('Hi, thanks for messaging NOA Dental Clinic, Dubai. We are closed right now, but I can help you book so you do not have to wait until morning.',600,function(){
+      agentSay('What can I help you with tonight?',700,function(){ showChips([{label:'Book an appointment',value:'Hi, I would like to book an appointment'},{label:'Teeth whitening',value:'I need teeth whitening'},{label:'Ask about price',value:'How much does it cost?'}]); });
+    });
+  } else {
+    addMsg('Hi, thanks for messaging NOA Dental Clinic, Dubai. We are closed right now, but I can help you book so you do not have to wait until morning. What can I help you with tonight?','agent');
+  }
+}
+document.getElementById('composer').addEventListener('submit',function(e){ e.preventDefault(); var v=input.value.trim(); if(!v) return; input.value=''; handleCustomer(v); });
+resetDemo();
+</script>
+</body>
+</html>
